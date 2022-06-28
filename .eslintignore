@@ -1,0 +1,6 @@
+node_modules
+build
+reports
+jest.config.ts
+.eslintrc.js
+.prettierrc.js

@@ -1,6 +1,6 @@
 import express from 'express';
 import * as controller from './urls.controller';
-import { handleAsync } from "../../utils/middleware";
+import { handleAsync } from '../../utils/middleware';
 
 const router = express.Router();
 

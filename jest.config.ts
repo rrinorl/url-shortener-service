@@ -8,6 +8,11 @@ export default {
   clearMocks: true,
   coverageDirectory: 'reports/coverage',
   coverageReporters: ['text', 'lcov', 'cobertura'],
-  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/build/**', '!**/node_modules/**', '!**/vendor/**'],
+  collectCoverageFrom: [
+    'src/**/*.{ts,tsx}',
+    '!**/build/**',
+    '!**/node_modules/**',
+    '!**/vendor/**',
+  ],
   testEnvironment: 'node',
 };

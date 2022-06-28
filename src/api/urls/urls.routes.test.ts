@@ -4,7 +4,10 @@ jest.mock('./urls.controller');
 
 describe('urls.routes', () => {
   it('has routes', () => {
-    const routes = [{ path: '/', method: 'get' }];
+    const routes = [
+      { path: '/urls', method: 'post' },
+      { path: '/', method: 'get' },
+    ];
 
     routes.forEach((route) => {
       const match = urlsRoutes.stack.find(

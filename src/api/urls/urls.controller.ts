@@ -6,12 +6,12 @@ export { post, get };
 
 async function post(req: Request, res: Response): Promise<void> {
   const { url } = req.body;
-  if(!url) {
-    res.status(StatusCodes.BAD_REQUEST).json({error: 'Url field in body is required'})
+  if (!url) {
+    res.status(StatusCodes.BAD_REQUEST).json({ error: 'Url field in body is required' });
     return;
   }
-  if(!url.startsWith('http')){
-    res.status(StatusCodes.BAD_REQUEST).json({error: 'Url must start with protocol.'});
+  if (!url.startsWith('http')) {
+    res.status(StatusCodes.BAD_REQUEST).json({ error: 'Url must start with protocol.' });
     return;
   }
 
