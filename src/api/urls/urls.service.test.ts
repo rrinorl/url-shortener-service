@@ -4,7 +4,7 @@ import * as urlsModel from './urls.model';
 jest.mock('./urls.model');
 
 describe('urls.service', () => {
-  describe('post', () => {
+  describe('create', () => {
     const mockUrlsModelCreate = urlsModel.create as jest.Mock;
     const url = 'https://www.google.com';
     describe('when urls model returns response', () => {
