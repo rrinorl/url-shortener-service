@@ -1,7 +1,7 @@
 import {createExpressApp} from "./config/express";
 import * as apiHandler from './api';
 import {Express} from "express";
-import * as prisma from './clients/prismaClient';
+import prisma from './clients/prismaClient';
 
 export { createApp };
 
@@ -13,7 +13,7 @@ async function createApp(): Promise<Express>{
         console.info('Connected to database.');
     }
     catch(err){
-        console.error({err}, 'Prisma cannot connect to database.');
+        console.error({err}, 'Prisma cannot connect to database. Please check database connection. If first time running, connect to docker instance and run `npx prisma migrate dev` to create database.');
         throw err;
     }
     apiHandler.init(app);

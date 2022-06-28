@@ -5,10 +5,12 @@ WORKDIR /home/node/app
 
 #Copy and install dependencies
 
-COPY package.json package-lock.json ./
-
+COPY package*.json  ./
 RUN npm i
 
+#Copy prisma related files
+COPY prisma ./prisma/
+COPY tsconfig*.json ./
 RUN npx prisma generate
 
 #Copy project files except those listed in .dockerignore

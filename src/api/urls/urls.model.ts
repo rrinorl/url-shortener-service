@@ -1,5 +1,5 @@
 import {nanoid} from "nanoid";
-import * as prisma from '../../clients/prismaClient';
+import prisma from '../../clients/prismaClient';
 import {throwNotFoundError} from "../../utils/error/errorUtils";
 
 const DEFAULT_ID_SIZE = 7;

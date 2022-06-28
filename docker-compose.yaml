@@ -18,7 +18,7 @@ services:
     environment:
       PORT: 4000
       NODE_ENV: development
-      DATABASE_URL: postgresql://postgres:root@postgres:5432/url_shortener?schema=public
+      DATABASE_URL: postgresql://postgres:root@postgres:5432/url_shortener?connect_timeout=300
       # only set if default is not correct
       SHORT_URL_LENGTH:
     depends_on:
