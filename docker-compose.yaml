@@ -18,10 +18,7 @@ services:
     environment:
       PORT: 4000
       NODE_ENV: development
-      DATABASE_HOST: postgres
-      DATABASE_NAME: url_shortener
-      DATABASE_USERNAME: postgres
-      DATABASE_PASSWORD: root
+      DATABASE_URL: postgresql://postgres:root@postgres:5432/url_shortener?schema=public
       # only set if default is not correct
       SHORT_URL_LENGTH:
     depends_on:

@@ -9,6 +9,8 @@ COPY package.json package-lock.json ./
 
 RUN npm i
 
+RUN npx prisma generate
+
 #Copy project files except those listed in .dockerignore
 
 COPY . .

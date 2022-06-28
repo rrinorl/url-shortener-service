@@ -15,12 +15,12 @@ async function post(req: Request, res: Response): Promise<void> {
     return;
   }
 
-  const urlModelResult = await urlsService.create(url);
-  res.status(StatusCodes.CREATED).json(urlModelResult);
+  const urlModel = await urlsService.create(url);
+  res.status(StatusCodes.CREATED).json(urlModel);
 }
 
 async function get(req: Request, res: Response): Promise<void> {
   const { hash } = req.params;
-  const urlModelResult = await urlsService.get(hash);
-  res.redirect(urlModelResult.url);
+  const urlModel = await urlsService.get(hash);
+  res.redirect(urlModel.url);
 }
