@@ -1,0 +1,42 @@
+version: '3.7'
+
+services:
+  url-shortener-service:
+    container_name: url-shortener-service
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    volumes:
+      - ./src:/home/node/app/src
+      - ./nodemon.json:/home/node/app/nodemon.json
+    expose:
+      - '4000'
+    ports:
+      - '4000:4000'
+    command: npm run dev
+    environment:
+      PORT: 4000
+      NODE_ENV: development
+      DATABASE_HOST: postgres
+      DATABASE_NAME: url_shortener
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: root
+      # only set if default is not correct
+      SHORT_URL_LENGTH:
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_USER: postgres
+      POSTGRES_DB: url_shortener
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/psql
+volumes:
+  db_data: {}

@@ -1,0 +1,8 @@
+{
+  "verbose": true,
+  "ignore": [
+    "src/**/*.test.ts"
+  ],
+  "watch": ["src/**/*.ts"],
+  "exec": "npm run local"
+}
