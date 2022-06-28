@@ -6,7 +6,7 @@ describe('urls.routes', () => {
   it('has routes', () => {
     const routes = [
       { path: '/urls', method: 'post' },
-      { path: '/', method: 'get' },
+      { path: '/:hash', method: 'get' },
     ];
 
     routes.forEach((route) => {
